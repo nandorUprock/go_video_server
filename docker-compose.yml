@@ -1,0 +1,9 @@
+services:
+  go-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go_app
+    ports:
+      - 3002:8080
+    restart: unless-stopped

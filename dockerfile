@@ -10,12 +10,13 @@ WORKDIR /app
 
 # Copy source code and video file
 COPY . .
+RUN chmod +x entrypoint.sh
 
 # Build the Go app
-RUN go build -o video-server
+# RUN go build -o video-server
 
 # Expose port
 EXPOSE 8080
 
 # Run the server
-CMD ["./video-server"]
+CMD ["/bin/sh", "./entrypoint.sh"]
