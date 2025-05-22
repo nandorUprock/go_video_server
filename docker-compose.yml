@@ -6,4 +6,6 @@ services:
     container_name: go_app
     ports:
       - 3002:8080
+    volumes:
+      - ./:/app
     restart: unless-stopped
