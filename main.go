@@ -21,8 +21,6 @@ func main() {
 
 func handleHttpRequest(videoUrl string, videoPath string) {
 	http.HandleFunc(videoUrl, func(w http.ResponseWriter, r *http.Request) {
-		videoPath := videoPath
-
 		file, err := os.Open(videoPath)
 		if err != nil {
 			http.Error(w, "Video not found", http.StatusNotFound)
